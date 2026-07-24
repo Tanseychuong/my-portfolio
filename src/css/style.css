@@ -2,43 +2,14 @@ body {
 
     font-family: var(--body-font);
 
-    background-color: var(--background-color);
+    background: var(--background-color);
 
     color: var(--text-color);
 
-    line-height: 1.6;
-
 }
 
 
-#app {
-
-    width: 100%;
-
-}
-
-
-section {
-
-    width: 100%;
-
-    max-width: var(--max-width);
-
-    margin: auto;
-
-    padding: 80px 20px;
-
-}
-
-
-h1,
-h2,
-h3 {
-
-    font-family: var(--heading-font);
-
-}
-
+/* Container */
 
 .container {
 
@@ -47,5 +18,174 @@ h3 {
     max-width: var(--max-width);
 
     margin: auto;
+
+}
+
+
+
+/* Navbar */
+
+#navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    background: white;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    padding: 20px 0;
+
+}
+
+
+#navbar nav {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.logo {
+
+    font-size: 1.5rem;
+
+    font-weight: bold;
+
+    color: var(--primary-color);
+
+}
+
+
+
+.nav-links {
+
+    display: flex;
+
+    list-style: none;
+
+    gap: 30px;
+
+}
+
+
+.nav-links a {
+
+    color: var(--text-color);
+
+    transition: var(--transition);
+
+}
+
+
+.nav-links a:hover {
+
+    color: var(--primary-color);
+
+}
+
+
+
+/* Hero */
+
+#hero {
+
+    min-height: 80vh;
+
+    display: flex;
+
+    align-items: center;
+
+    background: linear-gradient(135deg,
+            #eff6ff,
+            #ffffff);
+
+}
+
+
+
+#hero h1 {
+
+    font-size: 4rem;
+
+    margin-bottom: 20px;
+
+}
+
+
+#hero p {
+
+    color: var(--muted-color);
+
+    font-size: 1.2rem;
+
+    margin-bottom: 30px;
+
+}
+
+
+
+button {
+
+    background: var(--primary-color);
+
+    color: white;
+
+    border: none;
+
+    padding: 14px 30px;
+
+    border-radius: var(--radius);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+button:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+
+/* Sections */
+
+section {
+
+    padding: 80px 0;
+
+}
+
+
+h2 {
+
+    font-size: 2.5rem;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+/* Footer */
+
+footer {
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: var(--secondary-color);
+
+    color: white;
 
 }
