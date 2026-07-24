@@ -1,0 +1,32 @@
+:root {
+
+    /* Colors */
+
+    --primary-color: #2563eb;
+    --secondary-color: #0f172a;
+
+    --background-color: #ffffff;
+    --surface-color: #f8fafc;
+
+    --text-color: #111827;
+    --muted-color: #64748b;
+
+
+    /* Fonts */
+
+    --heading-font: "Inter", sans-serif;
+    --body-font: "Inter", sans-serif;
+
+
+    /* Layout */
+
+    --max-width: 1200px;
+
+
+    /* Effects */
+
+    --transition: all 0.3s ease;
+
+    --border-radius: 12px;
+
+}
