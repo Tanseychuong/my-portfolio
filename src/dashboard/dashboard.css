@@ -1,0 +1,29 @@
+body {
+
+    font-family: Arial;
+
+    background: #f5f5f5;
+
+    padding: 40px;
+
+}
+
+
+.cards {
+
+    display: flex;
+
+    gap: 20px;
+
+}
+
+
+.cards div {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+}
