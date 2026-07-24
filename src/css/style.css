@@ -31,13 +31,18 @@ body {
 
     top: 0;
 
-    background: white;
+    z-index: 10;
 
-    border-bottom: 1px solid #e5e7eb;
+    background: rgba(247, 241, 232, 0.85);
 
-    padding: 20px 0;
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid var(--border-color);
+
+    padding: 25px 0;
 
 }
+
 
 
 #navbar nav {
@@ -51,13 +56,14 @@ body {
 }
 
 
+
 .logo {
 
-    font-size: 1.5rem;
+    color: var(--secondary-color);
 
-    font-weight: bold;
+    font-size: 1.6rem;
 
-    color: var(--primary-color);
+    font-weight: 700;
 
 }
 
@@ -67,11 +73,12 @@ body {
 
     display: flex;
 
+    gap: 35px;
+
     list-style: none;
 
-    gap: 30px;
-
 }
+
 
 
 .nav-links a {
@@ -81,6 +88,7 @@ body {
     transition: var(--transition);
 
 }
+
 
 
 .nav-links a:hover {
@@ -95,15 +103,11 @@ body {
 
 #hero {
 
-    min-height: 80vh;
+    min-height: 85vh;
 
     display: flex;
 
     align-items: center;
-
-    background: linear-gradient(135deg,
-            #eff6ff,
-            #ffffff);
 
 }
 
@@ -113,34 +117,41 @@ body {
 
     font-size: 4rem;
 
-    margin-bottom: 20px;
+    line-height: 1.1;
+
+    color: var(--secondary-color);
 
 }
 
 
+
 #hero p {
+
+    margin-top: 20px;
 
     color: var(--muted-color);
 
     font-size: 1.2rem;
 
-    margin-bottom: 30px;
-
 }
 
 
 
+/* Button */
+
 button {
+
+    margin-top: 30px;
+
+    padding: 15px 35px;
+
+    border: none;
+
+    border-radius: 50px;
 
     background: var(--primary-color);
 
     color: white;
-
-    border: none;
-
-    padding: 14px 30px;
-
-    border-radius: var(--radius);
 
     cursor: pointer;
 
@@ -149,9 +160,12 @@ button {
 }
 
 
+
 button:hover {
 
     transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(166, 106, 63, 0.25);
 
 }
 
@@ -161,16 +175,37 @@ button:hover {
 
 section {
 
-    padding: 80px 0;
+    padding: 100px 0;
 
 }
+
 
 
 h2 {
 
     font-size: 2.5rem;
 
-    margin-bottom: 20px;
+    color: var(--secondary-color);
+
+}
+
+
+
+/* Cards (for projects/blog later) */
+
+.card {
+
+    background: var(--surface-color);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius);
+
+    padding: 30px;
+
+    box-shadow:
+
+        0 10px 30px rgba(43, 33, 24, 0.05);
 
 }
 
@@ -180,12 +215,12 @@ h2 {
 
 footer {
 
+    background: var(--secondary-color);
+
+    color: #F7F1E8;
+
     padding: 30px;
 
     text-align: center;
-
-    background: var(--secondary-color);
-
-    color: white;
 
 }

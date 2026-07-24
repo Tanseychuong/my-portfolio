@@ -2,20 +2,29 @@
 
     /* Colors */
 
-    --primary-color: #2563eb;
-    --secondary-color: #0f172a;
+    --primary-color: #A66A3F;
+    /* Bronze */
+    --secondary-color: #2B2118;
+    /* Dark coffee */
 
-    --background-color: #ffffff;
-    --surface-color: #f8fafc;
+    --background-color: #F7F1E8;
+    /* Pearl */
+    --surface-color: #FFFDF8;
+    /* Ivory */
 
-    --text-color: #111827;
-    --muted-color: #64748b;
+    --text-color: #2B2118;
+
+    --muted-color: #7A6858;
+
+    --border-color: #E4D7C8;
 
 
-    /* Typography */
+
+    /* Fonts */
 
     --heading-font: "Inter", sans-serif;
     --body-font: "Inter", sans-serif;
+
 
 
     /* Layout */
@@ -23,10 +32,12 @@
     --max-width: 1200px;
 
 
+
     /* Effects */
 
     --transition: 0.3s ease;
 
-    --radius: 12px;
+    --radius: 18px;
+
 
 }
