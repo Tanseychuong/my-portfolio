@@ -1,0 +1,51 @@
+body {
+
+    font-family: var(--body-font);
+
+    background-color: var(--background-color);
+
+    color: var(--text-color);
+
+    line-height: 1.6;
+
+}
+
+
+#app {
+
+    width: 100%;
+
+}
+
+
+section {
+
+    width: 100%;
+
+    max-width: var(--max-width);
+
+    margin: auto;
+
+    padding: 80px 20px;
+
+}
+
+
+h1,
+h2,
+h3 {
+
+    font-family: var(--heading-font);
+
+}
+
+
+.container {
+
+    width: 90%;
+
+    max-width: var(--max-width);
+
+    margin: auto;
+
+}
