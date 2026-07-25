@@ -44,6 +44,7 @@ const contactRoute = require("./routes/contactRoute");
 
 const analyticRoute = require("./routes/analyticRoute");
 
+const authRoute = require("./routes/authRoute");
 
 // API Routes
 
@@ -62,6 +63,12 @@ app.use(
 app.use(
     "/api/comments",
     commentRoute
+);
+
+
+app.use(
+    "/api/auth",
+    authRoute
 );
 
 
