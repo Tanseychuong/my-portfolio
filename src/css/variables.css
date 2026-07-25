@@ -1,43 +1,23 @@
 :root {
 
-    /* Colors */
+    --background: #F7F1E8;
 
-    --primary-color: #A66A3F;
-    /* Bronze */
-    --secondary-color: #2B2118;
-    /* Dark coffee */
+    --surface: #FFFDF9;
 
-    --background-color: #F7F1E8;
-    /* Pearl */
-    --surface-color: #FFFDF8;
-    /* Ivory */
+    --primary: #A66A3F;
 
-    --text-color: #2B2118;
+    --secondary: #6E4B35;
 
-    --muted-color: #7A6858;
+    --heading: #2C2118;
 
-    --border-color: #E4D7C8;
+    --text: #5D4B3D;
 
+    --border: #E6D8C8;
 
-
-    /* Fonts */
-
-    --heading-font: "Inter", sans-serif;
-    --body-font: "Inter", sans-serif;
-
-
-
-    /* Layout */
-
-    --max-width: 1200px;
-
-
-
-    /* Effects */
-
-    --transition: 0.3s ease;
+    --white: #ffffff;
 
     --radius: 18px;
 
+    --transition: .3s ease;
 
 }

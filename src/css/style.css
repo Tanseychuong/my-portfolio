@@ -1,51 +1,54 @@
-body {
+* {
 
-    font-family: var(--body-font);
+    margin: 0;
 
-    background: var(--background-color);
+    padding: 0;
 
-    color: var(--text-color);
+    box-sizing: border-box;
+
+    font-family: "Inter", sans-serif;
 
 }
 
+body {
 
-/* Container */
+    background: var(--background);
+
+    color: var(--text);
+
+}
 
 .container {
 
     width: 90%;
 
-    max-width: var(--max-width);
+    max-width: 1200px;
 
     margin: auto;
 
 }
 
-
-
-/* Navbar */
+/* NAVBAR */
 
 #navbar {
 
-    position: sticky;
+    position: fixed;
+
+    width: 100%;
 
     top: 0;
 
-    z-index: 10;
-
-    background: rgba(247, 241, 232, 0.85);
+    background: rgba(247, 241, 232, .95);
 
     backdrop-filter: blur(10px);
 
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border);
 
-    padding: 25px 0;
+    z-index: 1000;
 
 }
 
-
-
-#navbar nav {
+#navbar .container {
 
     display: flex;
 
@@ -53,57 +56,57 @@ body {
 
     align-items: center;
 
+    padding: 20px 0;
+
 }
-
-
 
 .logo {
 
-    color: var(--secondary-color);
+    font-size: 30px;
 
-    font-size: 1.6rem;
+    font-weight: 800;
 
-    font-weight: 700;
+    color: var(--heading);
 
 }
 
+.logo span {
 
+    color: var(--primary);
+
+}
 
 .nav-links {
 
     display: flex;
 
-    gap: 35px;
-
     list-style: none;
 
+    gap: 35px;
+
 }
-
-
 
 .nav-links a {
 
-    color: var(--text-color);
+    text-decoration: none;
 
-    transition: var(--transition);
+    color: var(--heading);
+
+    transition: .3s;
 
 }
-
-
 
 .nav-links a:hover {
 
-    color: var(--primary-color);
+    color: var(--primary);
 
 }
 
-
-
-/* Hero */
+/* HERO */
 
 #hero {
 
-    min-height: 85vh;
+    min-height: 100vh;
 
     display: flex;
 
@@ -111,116 +114,508 @@ body {
 
 }
 
+.hero-content {
 
+    display: grid;
 
-#hero h1 {
+    grid-template-columns: 1fr 1fr;
 
-    font-size: 4rem;
+    align-items: center;
 
-    line-height: 1.1;
-
-    color: var(--secondary-color);
-
-}
-
-
-
-#hero p {
-
-    margin-top: 20px;
-
-    color: var(--muted-color);
-
-    font-size: 1.2rem;
+    gap: 60px;
 
 }
 
+.hero-text h1 {
 
+    font-size: 64px;
 
-/* Button */
+    line-height: 1.15;
 
-button {
+    color: var(--heading);
 
-    margin-top: 30px;
+}
 
-    padding: 15px 35px;
+.subtitle {
 
-    border: none;
+    margin-top: 25px;
+
+    font-size: 22px;
+
+    color: var(--primary);
+
+}
+
+#typing {
+
+    margin-top: 15px;
+
+    font-size: 20px;
+
+    color: var(--secondary);
+
+}
+
+.hero-buttons {
+
+    margin-top: 40px;
+
+    display: flex;
+
+    gap: 20px;
+
+}
+
+.btn {
+
+    padding: 16px 35px;
 
     border-radius: 50px;
 
-    background: var(--primary-color);
+    background: var(--primary);
 
     color: white;
 
-    cursor: pointer;
-
-    transition: var(--transition);
+    text-decoration: none;
 
 }
 
+.btn-outline {
 
+    padding: 16px 35px;
 
-button:hover {
+    border-radius: 50px;
 
-    transform: translateY(-3px);
+    border: 2px solid var(--primary);
 
-    box-shadow: 0 10px 25px rgba(166, 106, 63, 0.25);
+    text-decoration: none;
 
-}
-
-
-
-/* Sections */
-
-section {
-
-    padding: 100px 0;
+    color: var(--primary);
 
 }
 
+.hero-image {
 
+    display: flex;
 
-h2 {
-
-    font-size: 2.5rem;
-
-    color: var(--secondary-color);
+    justify-content: center;
 
 }
 
+.hero-image img {
 
+    width: 400px;
 
-/* Cards (for projects/blog later) */
+    height: 400px;
 
-.card {
+    border-radius: 50%;
 
-    background: var(--surface-color);
+    object-fit: cover;
 
-    border: 1px solid var(--border-color);
+    border: 8px solid white;
 
-    border-radius: var(--radius);
-
-    padding: 30px;
-
-    box-shadow:
-
-        0 10px 30px rgba(43, 33, 24, 0.05);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .12);
 
 }
 
+/* ==========================
+   ABOUT
+========================== */
 
+#about {
 
-/* Footer */
+    padding: 120px 0;
 
-footer {
+}
 
-    background: var(--secondary-color);
-
-    color: #F7F1E8;
-
-    padding: 30px;
+.section-title {
 
     text-align: center;
+
+    margin-bottom: 60px;
+
+}
+
+.section-title h2 {
+
+    font-size: 48px;
+
+    color: var(--heading);
+
+    margin-bottom: 15px;
+
+}
+
+.section-title p {
+
+    color: var(--text);
+
+    font-size: 18px;
+
+}
+
+.about-content {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+}
+
+.about-text h3 {
+
+    font-size: 36px;
+
+    color: var(--heading);
+
+    margin-bottom: 25px;
+
+}
+
+.about-text p {
+
+    margin-bottom: 20px;
+
+    line-height: 1.8;
+
+    font-size: 18px;
+
+}
+
+.about-cards {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+.about-card {
+
+    background: var(--surface);
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    border: 1px solid var(--border);
+
+    transition: .3s;
+
+}
+
+.about-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .08);
+
+}
+
+.about-card h3 {
+
+    font-size: 36px;
+
+    margin-bottom: 15px;
+
+}
+
+.about-card h4 {
+
+    margin-bottom: 12px;
+
+    color: var(--heading);
+
+}
+
+.about-card p {
+
+    line-height: 1.6;
+
+}
+
+/* ==========================
+        SKILLS
+========================== */
+
+#skills {
+
+    padding: 120px 0;
+
+}
+
+.skills-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
+    margin-top: 50px;
+
+}
+
+.skill-card {
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    transition: .3s;
+
+}
+
+.skill-card:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+
+}
+
+.skill-card h3 {
+
+    color: var(--primary);
+
+    margin-bottom: 20px;
+
+}
+
+.skill-card ul {
+
+    list-style: none;
+
+}
+
+.skill-card li {
+
+    margin: 12px 0;
+
+}
+
+.progress-section {
+
+    margin-top: 80px;
+
+}
+
+.progress-item {
+
+    margin-bottom: 30px;
+
+}
+
+.progress-item span {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-weight: 600;
+
+}
+
+.progress {
+
+    width: 100%;
+
+    height: 12px;
+
+    background: #e9dfd3;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+.progress-bar {
+
+    height: 100%;
+
+    background: linear-gradient(90deg,
+            var(--primary),
+            #d89a65);
+
+    border-radius: 20px;
+
+}
+
+.java {
+
+    width: 90%;
+
+}
+
+.python {
+
+    width: 85%;
+
+}
+
+.R {
+
+    width: 78%;
+
+}
+
+.javascript {
+
+    width: 85%;
+
+}
+
+.sql {
+
+    width: 80%;
+
+}
+
+.html {
+
+    width: 90%;
+
+}
+
+/* ==========================
+        PROJECTS
+========================== */
+
+#projects {
+
+    padding: 120px 0;
+
+}
+
+.project-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+
+    gap: 35px;
+
+    margin-top: 60px;
+
+}
+
+.project-card {
+
+    background: var(--surface);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    transition: .4s;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, .05);
+
+}
+
+.project-card:hover {
+
+    transform: translateY(-12px);
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .12);
+
+}
+
+.project-card img {
+
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+}
+
+.project-content {
+
+    padding: 28px;
+
+}
+
+.project-content h3 {
+
+    color: var(--heading);
+
+    margin-bottom: 15px;
+
+}
+
+.project-content p {
+
+    line-height: 1.7;
+
+    margin-bottom: 22px;
+
+}
+
+.tech-stack {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+
+}
+
+.tech-stack span {
+
+    background: #efe4d6;
+
+    color: var(--secondary);
+
+    padding: 8px 15px;
+
+    border-radius: 50px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+.project-links {
+
+    display: flex;
+
+    justify-content: space-between;
+
+}
+
+.project-links a {
+
+    text-decoration: none;
+
+    color: var(--primary);
+
+    font-weight: 600;
+
+    transition: .3s;
+
+}
+
+.project-links a:hover {
+
+    letter-spacing: 1px;
 
 }

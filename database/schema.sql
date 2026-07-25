@@ -86,3 +86,15 @@ CREATE TABLE visitors (
     visited_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 );
+
+CREATE TABLE projects (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(150),
+    description TEXT,
+    image VARCHAR(255),
+    github_url VARCHAR(255),
+    live_url VARCHAR(255),
+    technologies VARCHAR(255),
+    featured BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

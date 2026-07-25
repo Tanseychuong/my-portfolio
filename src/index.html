@@ -2,179 +2,377 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Chuong Tiutiu | Portfolio</title>
 
-    <meta name="description" content="Personal portfolio website showcasing projects, research, blogs, and experience.">
-
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 
-
-    <!-- Your CSS -->
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/variables.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
 </head>
 
+<body>
 
-<bodybody { background: radial-gradient( circle at top left, #fff8ef, transparent 40% ), var(--background-color); }>
+    <header id="navbar">
 
+        <div class="container">
 
-    <div id="app">
+            <div class="logo">
+                Chuong<span>.</span>
+            </div>
 
-        <!-- Navigation -->
-        <header id="navbar">
-            <nav class="container">
-
-                <a href="#" class="logo">
-                    Chuong
-                </a>
+            <nav>
 
                 <ul class="nav-links">
 
-                    <li>
-                        <a href="#about">About</a>
-                    </li>
+                    <li><a href="#hero">Home</a></li>
 
-                    <li>
-                        <a href="#projects">Projects</a>
-                    </li>
+                    <li><a href="#about">About</a></li>
 
-                    <li>
-                        <a href="#blog">Blog</a>
-                    </li>
+                    <li><a href="#projects">Projects</a></li>
 
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
+                    <li><a href="#blog">Blog</a></li>
+
+                    <li><a href="#contact">Contact</a></li>
 
                 </ul>
 
             </nav>
-        </header>
 
+        </div>
 
+    </header>
 
-        <main>
+    <section id="hero">
 
+        <div class="container hero-content">
 
-            <!-- Hero Section -->
-            <section id="hero">
+            <div class="hero-text">
 
-                <div class="container">
+                <h1>
+                    Building technology that creates opportunities.
+                </h1>
 
-                    <h1>
-                        Hello, I'm Chuong Tiutiu
-                    </h1>
+                <p class="subtitle">
 
+                    Computer Science Student
+
+                </p>
+
+                <p id="typing"></p>
+
+                <div class="hero-buttons">
+
+                    <a href="#projects" class="btn">
+                        View Projects
+                    </a>
+
+                    <a href="#blog" class="btn-outline">
+                        Read Blog
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <img src="assets/images/profile.jpeg" alt="Chuong Tiutiu">
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>About Me</h2>
+
+                <p>Passionate about building technology that solves real-world problems.</p>
+
+            </div>
+
+            <div class="about-content">
+
+                <div class="about-text">
+
+                    <h3>Hello, I'm Chuong.</h3>
 
                     <p>
-                        Computer Science Student | Developer | Researcher
+                        I'm a Computer Science student at Ashesi University with a passion
+                        for software engineering, artificial intelligence, cybersecurity,
+                        and entrepreneurship. I enjoy building practical digital solutions
+                        that create opportunities and solve real-world challenges.
                     </p>
-
-
-                    <button>
-                        View My Work
-                    </button>
-
-
-                </div>
-
-            </section>
-
-
-
-            <!-- About -->
-            <section id="about">
-
-                <div class="container">
-
-                    <h2>
-                        About Me
-                    </h2>
 
                     <p>
-                        Welcome to my personal website.
+                        My interests span web development, research, machine learning,
+                        database systems, and scalable software architecture. I believe
+                        technology should empower communities and improve lives.
                     </p>
 
-                </div>
-
-            </section>
-
-
-
-            <!-- Projects -->
-            <section id="projects">
-
-                <div class="container">
-
-                    <h2>
-                        Projects
-                    </h2>
+                    <a href="#" class="btn">
+                        Download CV
+                    </a>
 
                 </div>
 
-            </section>
+                <div class="about-cards">
 
+                    <div class="about-card">
 
+                        <h3>💻</h3>
 
-            <!-- Blog -->
-            <section id="blog">
+                        <h4>Software Development</h4>
 
-                <div class="container">
+                        <p>Building responsive websites and modern web applications.</p>
 
-                    <h2>
-                        Blog
-                    </h2>
+                    </div>
+
+                    <div class="about-card">
+
+                        <h3>🔬</h3>
+
+                        <h4>Research</h4>
+
+                        <p>Interested in AI, education, and technology for social impact.</p>
+
+                    </div>
+
+                    <div class="about-card">
+
+                        <h3>🚀</h3>
+
+                        <h4>Entrepreneurship</h4>
+
+                        <p>Turning innovative ideas into practical solutions.</p>
+
+                    </div>
+
+                    <div class="about-card">
+
+                        <h3>🛡️</h3>
+
+                        <h4>Cybersecurity</h4>
+
+                        <p>Learning secure software development and defensive security.</p>
+
+                    </div>
 
                 </div>
 
-            </section>
+            </div>
 
+        </div>
 
+    </section>
 
-            <!-- Contact -->
-            <section id="contact">
+    <!-- =======================
+        SKILLS
+======================= -->
 
-                <div class="container">
+    <section id="skills">
 
-                    <h2>
-                        Contact
-                    </h2>
+        <div class="container">
 
-                </div>
+            <div class="section-title">
 
-            </section>
-
-
-        </main>
-
-
-
-        <footer>
-
-            <div class="container">
+                <h2>Skills & Technologies</h2>
 
                 <p>
-                    © 2026 Chuong Tiutiu
+                    Technologies I use to design, build and deploy software.
                 </p>
 
             </div>
 
-        </footer>
+            <div class="skills-grid">
+
+                <div class="skill-card">
+
+                    <h3>Languages</h3>
+
+                    <ul>
+
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="skill-card">
+
+                    <h3>Frontend</h3>
+
+                    <ul>
+
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Responsive Design</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="skill-card">
+
+                    <h3>Backend</h3>
+
+                    <ul>
+
+                        <li>Node.js</li>
+                        <li>Express.js</li>
+                        <li>Flask</li>
+                        <li>REST APIs</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="skill-card">
+
+                    <h3>Databases</h3>
+
+                    <ul>
+
+                        <li>MariaDB</li>
+                        <li>MySQL</li>
+                        <li>Firebase</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="progress-section">
+
+                <div class="progress-item">
+
+                    <span>Java</span>
+
+                    <div class="progress">
+
+                        <div class="progress-bar java"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="progress-item">
+
+                    <span>Python</span>
+
+                    <div class="progress">
+
+                        <div class="progress-bar python"></div>
+
+                    </div>
+
+                    <div class="progress-item">
+
+                        <span>R</span>
+
+                        <div class="progress">
+
+                            <div class="progress-bar R"></div>
+
+                        </div>
 
 
-    </div>
+                    </div>
+
+                    <div class="progress-item">
+
+                        <span>JavaScript</span>
+
+                        <div class="progress">
+
+                            <div class="progress-bar javascript"></div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="progress-item">
+
+                        <span>SQL</span>
+
+                        <div class="progress">
+
+                            <div class="progress-bar sql"></div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="progress-item">
+
+                        <span>HTML / CSS</span>
+
+                        <div class="progress">
+
+                            <div class="progress-bar html"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+    </section>
+    <section id="projects">
+
+        <div class="container">
 
 
+            <div class="section-title">
 
-    <script type="module" src="./js/main.js"></script>
+                <h2>
+                    Featured Projects
+                </h2>
 
-    </body>
+                <p>
+                    Some of the things I have built.
+                </p>
+
+            </div>
+
+
+            <div id="projects-container" class="project-grid">
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/typing.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/projects.js"></script>
+
+</body>
 
 </html>
