@@ -45,6 +45,7 @@ const contactRoute = require("./routes/contactRoute");
 const analyticRoute = require("./routes/analyticRoute");
 
 const authRoute = require("./routes/authRoute");
+const dashboardRoute = require("./routes/dashboardRoute");
 
 // API Routes
 
@@ -83,6 +84,10 @@ app.use(
     analyticRoute
 );
 
+app.use(
+    "/api/dashboard",
+    dashboardRoute
+);
 
 
 // Health check route
