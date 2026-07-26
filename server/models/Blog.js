@@ -52,6 +52,39 @@ const Blog = {
     },
 
 
+    async update(id, title, content, image) {
+
+        if (image) {
+
+            const sql = `
+                UPDATE blogs
+                SET title = ?, content = ?, image = ?
+                WHERE id = ?
+            `;
+
+            await db.execute(
+                sql,
+                [title, content, image, id]
+            );
+
+        } else {
+
+            const sql = `
+                UPDATE blogs
+                SET title = ?, content = ?
+                WHERE id = ?
+            `;
+
+            await db.execute(
+                sql,
+                [title, content, id]
+            );
+
+        }
+
+    },
+
+
     async delete(id) {
 
         await db.execute(

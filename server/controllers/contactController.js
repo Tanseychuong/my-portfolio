@@ -47,3 +47,54 @@ exports.sendMessage = async (req, res) => {
 
 
 };
+
+
+exports.getMessages = async (req, res) => {
+
+    try {
+
+        const [messages] = await db.query(
+            "SELECT * FROM messages ORDER BY created_at DESC"
+        );
+
+        res.json(messages);
+
+    } catch (error) {
+
+        console.error(error);
+
+        res.status(500).json({
+            message: "Failed to fetch messages"
+        });
+
+    }
+
+};
+
+
+exports.deleteMessage = async (req, res) => {
+
+    try {
+
+        const { id } = req.params;
+
+        await db.query(
+            "DELETE FROM messages WHERE id = ?",
+            [id]
+        );
+
+        res.json({
+            message: "Message deleted"
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+        res.status(500).json({
+            message: "Failed to delete message"
+        });
+
+    }
+
+};

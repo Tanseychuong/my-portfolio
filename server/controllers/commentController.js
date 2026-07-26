@@ -45,7 +45,6 @@ exports.createComment = async (req, res) => {
         const {
             blog_id,
             name,
-            email,
             comment
         } = req.body;
 
@@ -57,16 +56,14 @@ exports.createComment = async (req, res) => {
             (
                 blog_id,
                 name,
-                email,
                 comment
             )
 
-            VALUES(?,?,?,?)
+            VALUES(?,?,?)
             `,
             [
                 blog_id,
                 name,
-                email,
                 comment
             ]
         );

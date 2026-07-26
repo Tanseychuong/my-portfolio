@@ -16,7 +16,7 @@ exports.getDashboardStats = async (req, res) => {
 
         const [[messages]] =
             await db.query(
-                "SELECT COUNT(*) AS total FROM contacts"
+                "SELECT COUNT(*) AS total FROM messages"
             );
 
         const [[visitors]] =

@@ -3,13 +3,31 @@ const express = require("express");
 const router = express.Router();
 
 const contactController =
-    require("../controllers/contactController");
+    require("../../blog-messages-feature/server/controllers/contactController");
+
+const auth = require("../middleware/auth");
 
 
-// Send message
+// Public: send message
 router.post(
     "/",
     contactController.sendMessage
+);
+
+
+// Admin: view all messages
+router.get(
+    "/",
+    auth,
+    contactController.getMessages
+);
+
+
+// Admin: delete a message
+router.delete(
+    "/:id",
+    auth,
+    contactController.deleteMessage
 );
 
 
