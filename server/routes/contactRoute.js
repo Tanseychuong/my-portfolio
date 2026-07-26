@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 const contactController =
-    require("../../blog-messages-feature/server/controllers/contactController");
+    require("../controllers/contactController");
 
 const auth = require("../middleware/auth");
 

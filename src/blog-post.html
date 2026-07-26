@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blog | Chuong Tiutiu</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+    <header id="navbar">
+
+        <div class="container">
+
+            <div class="logo">
+                CHUONG**<span>.</span>
+            </div>
+
+            <nav>
+
+                <ul class="nav-links">
+
+                    <li><a href="index.html#hero">Home</a></li>
+
+                    <li><a href="index.html#about">About</a></li>
+
+                    <li><a href="index.html#projects">Projects</a></li>
+
+                    <li><a href="index.html#blog">Blog</a></li>
+
+                    <li><a href="index.html#contact">Contact</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <section class="blog-post-hero">
+
+        <div class="container">
+
+            <div id="blog-post-container">
+
+                <p>Loading post...</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="comments-section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Comments</h2>
+
+            </div>
+
+            <div id="comment-list" class="comment-list">
+
+            </div>
+
+            <form id="comment-form" class="comment-form">
+
+                <input type="hidden" id="comment-blog-id">
+
+                <input type="text" id="comment-name" placeholder="Your name" required>
+
+                <textarea id="comment-text" rows="4" placeholder="Add a comment..." required></textarea>
+
+                <button type="submit" class="btn">Post Comment</button>
+
+                <p id="comment-status" class="form-status"></p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <script src="js/blog-post.js"></script>
+
+</body>
+
+</html>

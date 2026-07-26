@@ -18,7 +18,7 @@ async function loadDashboard() {
                     headers: {
 
                         Authorization:
-                            `Bearer ${token}`
+                            token
 
                     }
 

@@ -25,7 +25,7 @@ async function loadProjects() {
 
 
             <img 
-            src="http://localhost:5000/${project.image}"
+            src="http://localhost:5000/uploads/${project.image}"
             alt="${project.title}"
             >
 
