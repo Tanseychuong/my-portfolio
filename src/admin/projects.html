@@ -97,6 +97,54 @@
 
     </div>
 
+    <div class="modal-overlay" id="modalOverlay">
+
+        <div class="modal">
+
+            <h2 id="modalTitle">Add Project</h2>
+
+            <form id="projectForm">
+
+                <input type="hidden" id="projectId">
+
+                <label for="title">Title</label>
+                <input type="text" id="title" required>
+
+                <label for="description">Description</label>
+                <textarea id="description" rows="3" required></textarea>
+
+                <label for="github_url">GitHub URL</label>
+                <input type="url" id="github_url">
+
+                <label for="live_url">Live URL</label>
+                <input type="url" id="live_url">
+
+                <label for="technologies">Technologies (comma separated)</label>
+                <input type="text" id="technologies" placeholder="React, Node.js, MySQL">
+
+                <label class="checkbox-label">
+                    <input type="checkbox" id="featured">
+                    Featured
+                </label>
+
+                <label for="image">Image</label>
+                <input type="file" id="image" accept="image/*">
+
+                <p id="formError" class="form-error"></p>
+
+                <div class="modal-actions">
+
+                    <button type="button" id="cancelModal">Cancel</button>
+                    <button type="submit" id="saveProject">Save</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
     <script src="js/projects.js"></script>
 
 </body>

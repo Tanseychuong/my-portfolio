@@ -1,3 +1,6 @@
+const fs = require("fs");
+const path = require("path");
+
 const Project = require("../models/project");
 
 
@@ -37,23 +40,19 @@ exports.createProject = async (req, res) => {
 
         const image = req.file ? req.file.filename : null;
 
-        await db.query(
-            `INSERT INTO projects
-            (title, description, image, github_url, live_url, technologies, featured)
-            VALUES (?, ?, ?, ?, ?, ?, ?)`,
-            [
-                title,
-                description,
-                image,
-                github_url,
-                live_url,
-                technologies,
-                featured || 0
-            ]
-        );
+        const id = await Project.create({
+            title,
+            description,
+            image,
+            github_url,
+            live_url,
+            technologies,
+            featured: featured === "true" || featured === true ? 1 : 0
+        });
 
         res.status(201).json({
-            message: "Project created successfully."
+            message: "Project created successfully.",
+            id
         });
 
     } catch (err) {
@@ -82,51 +81,39 @@ exports.updateProject = async (req, res) => {
             featured
         } = req.body;
 
-        if (req.file) {
+        const existing = await Project.getById(id);
 
-            await db.query(
-                `UPDATE projects
-                SET title=?,
-                    description=?,
-                    image=?,
-                    github_url=?,
-                    live_url=?,
-                    technologies=?,
-                    featured=?
-                WHERE id=?`,
-                [
-                    title,
-                    description,
-                    req.file.filename,
-                    github_url,
-                    live_url,
-                    technologies,
-                    featured,
-                    id
-                ]
+        if (!existing) {
+
+            return res.status(404).json({
+                message: "Project not found."
+            });
+
+        }
+
+        const image = req.file ? req.file.filename : null;
+
+        await Project.update(id, {
+            title,
+            description,
+            image,
+            github_url,
+            live_url,
+            technologies,
+            featured: featured === "true" || featured === true ? 1 : 0
+        });
+
+        // Remove the old image file if it was replaced
+        if (image && existing.image) {
+
+            const oldPath = path.join(
+                __dirname,
+                "..",
+                "uploads",
+                existing.image
             );
 
-        } else {
-
-            await db.query(
-                `UPDATE projects
-                SET title=?,
-                    description=?,
-                    github_url=?,
-                    live_url=?,
-                    technologies=?,
-                    featured=?
-                WHERE id=?`,
-                [
-                    title,
-                    description,
-                    github_url,
-                    live_url,
-                    technologies,
-                    featured,
-                    id
-                ]
-            );
+            fs.unlink(oldPath, () => { });
 
         }
 
@@ -152,10 +139,30 @@ exports.deleteProject = async (req, res) => {
 
         const { id } = req.params;
 
-        await db.query(
-            "DELETE FROM projects WHERE id=?",
-            [id]
-        );
+        const existing = await Project.getById(id);
+
+        if (!existing) {
+
+            return res.status(404).json({
+                message: "Project not found."
+            });
+
+        }
+
+        await Project.delete(id);
+
+        if (existing.image) {
+
+            const imagePath = path.join(
+                __dirname,
+                "..",
+                "uploads",
+                existing.image
+            );
+
+            fs.unlink(imagePath, () => { });
+
+        }
 
         res.json({
             message: "Project deleted."
