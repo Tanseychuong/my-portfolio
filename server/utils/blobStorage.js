@@ -4,6 +4,7 @@ const { put, del } = require("@vercel/blob");
 /**
  * Uploads an in-memory file buffer (from multer memoryStorage)
  * to Vercel Blob storage and returns the public URL.
+ * This is a new util folder added to support the uploads and database connection
  *
  * @param {Express.Multer.File} file
  * @param {string} folder - a prefix like "projects" or "blogs"
