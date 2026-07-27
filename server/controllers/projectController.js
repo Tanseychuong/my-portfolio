@@ -23,7 +23,7 @@ exports.getProjects = async (req, res) => {
     }
 
 };
-
+//These are newly lines of code for the controllers
 exports.createProject = async (req, res) => {
     try {
 
