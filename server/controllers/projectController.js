@@ -1,7 +1,5 @@
-const fs = require("fs");
-const path = require("path");
-
 const Project = require("../models/project");
+const { uploadImage, deleteImage } = require("../utils/blobStorage");
 
 
 exports.getProjects = async (req, res) => {
@@ -38,7 +36,9 @@ exports.createProject = async (req, res) => {
             featured
         } = req.body;
 
-        const image = req.file ? req.file.filename : null;
+        const image = req.file
+            ? await uploadImage(req.file, "projects")
+            : null;
 
         const id = await Project.create({
             title,
@@ -91,7 +91,9 @@ exports.updateProject = async (req, res) => {
 
         }
 
-        const image = req.file ? req.file.filename : null;
+        const image = req.file
+            ? await uploadImage(req.file, "projects")
+            : null;
 
         await Project.update(id, {
             title,
@@ -103,17 +105,10 @@ exports.updateProject = async (req, res) => {
             featured: featured === "true" || featured === true ? 1 : 0
         });
 
-        // Remove the old image file if it was replaced
+        // Remove the old image from Blob storage if it was replaced
         if (image && existing.image) {
 
-            const oldPath = path.join(
-                __dirname,
-                "..",
-                "uploads",
-                existing.image
-            );
-
-            fs.unlink(oldPath, () => { });
+            await deleteImage(existing.image);
 
         }
 
@@ -153,14 +148,7 @@ exports.deleteProject = async (req, res) => {
 
         if (existing.image) {
 
-            const imagePath = path.join(
-                __dirname,
-                "..",
-                "uploads",
-                existing.image
-            );
-
-            fs.unlink(imagePath, () => { });
+            await deleteImage(existing.image);
 
         }
 

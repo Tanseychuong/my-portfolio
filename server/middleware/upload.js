@@ -1,18 +1,10 @@
 const multer = require("multer");
-const path = require("path");
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, "uploads/");
-    },
-
-    filename: (req, file, cb) => {
-        const uniqueName =
-            Date.now() + path.extname(file.originalname);
-
-        cb(null, uniqueName);
-    }
-});
+// Memory storage: files are held in memory as a buffer and
+// uploaded to Vercel Blob storage by the controller. Vercel's
+// serverless functions have no writable persistent disk, so we
+// can't save files locally the way a traditional server would.
+const storage = multer.memoryStorage();
 
 const fileFilter = (req, file, cb) => {
 
@@ -26,5 +18,8 @@ const fileFilter = (req, file, cb) => {
 
 module.exports = multer({
     storage,
-    fileFilter
+    fileFilter,
+    limits: {
+        fileSize: 5 * 1024 * 1024 // 5MB
+    }
 });
