@@ -14,3 +14,5 @@ const {
 router.get("/", auth, getDashboardStats);
 
 module.exports = router;
+
+//end of the code
