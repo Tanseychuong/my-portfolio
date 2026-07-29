@@ -124,7 +124,7 @@ exports.updateBlog = async (req, res) => {
                 existing.image
             );
 
-            fs.unlink(oldPath, () => {});
+            fs.unlink(oldPath, () => { });
 
         }
 
@@ -173,7 +173,7 @@ exports.deleteBlog = async (req, res) => {
                 existing.image
             );
 
-            fs.unlink(imagePath, () => {});
+            fs.unlink(imagePath, () => { });
 
         }
 
@@ -192,3 +192,5 @@ exports.deleteBlog = async (req, res) => {
     }
 
 };
+
+// End of the code
