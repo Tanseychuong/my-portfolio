@@ -86,3 +86,5 @@ exports.getAnalytics = async (req, res) => {
     }
 
 };
+
+// End of the code
