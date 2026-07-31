@@ -1,4 +1,4 @@
-const API = "http://localhost:5000/api/blogs";
+const API = `${API_BASE}/api/blogs`;
 
 
 function formatDate(dateString) {
@@ -58,7 +58,7 @@ async function loadBlogs() {
             <article class="blog-card">
 
                 ${blog.image
-                    ? `<img src="http://localhost:5000/uploads/${blog.image}" alt="${blog.title}">`
+                    ? `<img src="${blog.image}" alt="${blog.title}">`
                     : ""
                 }
 
