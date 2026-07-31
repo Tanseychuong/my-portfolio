@@ -45,3 +45,5 @@ form.addEventListener("submit", async (e) => {
     }
 
 });
+
+//End of the login code
