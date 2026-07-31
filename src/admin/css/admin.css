@@ -397,3 +397,27 @@ td button:last-child {
     color: white;
 
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    /* Centers horizontally */
+    align-items: center;
+    /* Centers vertically */
+    height: 100vh;
+    /* Full viewport height */
+    margin: 0;
+    /* Remove default browser margins */
+    background-color: #e9ebef;
+    /* Example background */
+}
+
+.login-container {
+    background: rgb(235, 217, 217);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(186, 126, 126, 0.1);
+    width: 100%;
+    max-width: 400px;
+    /* Limits form width */
+}
