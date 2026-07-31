@@ -1,4 +1,3 @@
-const API_BASE = "http://localhost:5000";
 
 const token = localStorage.getItem("token");
 
@@ -53,7 +52,7 @@ async function loadProjects() {
             <td>
 
                 <img
-                src="${API_BASE}/uploads/${project.image}"
+                src="${project.image}"
                 width="80">
 
             </td>
