@@ -406,7 +406,7 @@ body {
     /* Centers vertically */
     height: 100vh;
     /* Full viewport height */
-    margin: 0;
+    margin: 5;
     /* Remove default browser margins */
     background-color: #e9ebef;
     /* Example background */
