@@ -1,4 +1,3 @@
-const API_BASE = "http://localhost:5000";
 
 const token = localStorage.getItem("token");
 
@@ -54,9 +53,9 @@ async function loadBlogs() {
 
             <td>
                 ${blog.image
-                    ? `<img src="${API_BASE}/uploads/${blog.image}" width="80">`
-                    : "—"
-                }
+                ? `<img src="${blog.image}" width="80">`
+                : "—"
+            }
             </td>
 
             <td>${blog.title}</td>
