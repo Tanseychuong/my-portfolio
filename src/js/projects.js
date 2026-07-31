@@ -1,5 +1,5 @@
 const API =
-    "http://localhost:5000/api/projects";
+    `${API_BASE}/api/projects`;
 
 
 async function loadProjects() {
@@ -25,7 +25,7 @@ async function loadProjects() {
 
 
             <img 
-            src="http://localhost:5000/uploads/${project.image}"
+            src="${project.image}"
             alt="${project.title}"
             >
 
