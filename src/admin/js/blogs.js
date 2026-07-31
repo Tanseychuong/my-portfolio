@@ -239,3 +239,5 @@ document.getElementById("logout").onclick = () => {
     location.href = "login.html";
 
 };
+
+//End of the code
