@@ -2,7 +2,6 @@ require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
-const path = require("path");
 
 
 // Database connection
@@ -21,15 +20,6 @@ app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }));
-
-
-// Serve uploaded files
-app.use(
-    "/uploads",
-    express.static(
-        path.join(__dirname, "uploads")
-    )
-);
 
 
 // Import routes
@@ -141,19 +131,28 @@ app.use((error, req, res, next) => {
 
 
 
-// Start server
+// Start server locally. On Vercel, this file is required by
+// Vercel's Node runtime as a serverless handler instead, so
+// app.listen() is skipped in that environment.
 
 const PORT =
     process.env.PORT || 5000;
 
 
-app.listen(
-    PORT,
-    () => {
+if (require.main === module) {
 
-        console.log(
-            `Server running on port ${PORT}`
-        );
+    app.listen(
+        PORT,
+        () => {
 
-    }
-);
+            console.log(
+                `Server running on port ${PORT}`
+            );
+
+        }
+    );
+
+}
+
+
+module.exports = app;

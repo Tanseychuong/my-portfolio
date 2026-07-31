@@ -1,14 +1,14 @@
-const fs = require("fs");
-const path = require("path");
-
 const Blog = require("../models/Blog");
+const { uploadImage, deleteImage } = require("../utils/blobStorage");
 
 
 exports.createBlog = async (req, res) => {
 
     try {
 
-        const image = req.file ? req.file.filename : null;
+        const image = req.file
+            ? await uploadImage(req.file, "blogs")
+            : null;
 
         const id = await Blog.create(
             req.body.title,
@@ -106,7 +106,9 @@ exports.updateBlog = async (req, res) => {
 
         }
 
-        const image = req.file ? req.file.filename : null;
+        const image = req.file
+            ? await uploadImage(req.file, "blogs")
+            : null;
 
         await Blog.update(
             id,
@@ -117,14 +119,7 @@ exports.updateBlog = async (req, res) => {
 
         if (image && existing.image) {
 
-            const oldPath = path.join(
-                __dirname,
-                "..",
-                "uploads",
-                existing.image
-            );
-
-            fs.unlink(oldPath, () => { });
+            await deleteImage(existing.image);
 
         }
 
@@ -166,14 +161,7 @@ exports.deleteBlog = async (req, res) => {
 
         if (existing.image) {
 
-            const imagePath = path.join(
-                __dirname,
-                "..",
-                "uploads",
-                existing.image
-            );
-
-            fs.unlink(imagePath, () => { });
+            await deleteImage(existing.image);
 
         }
 
@@ -192,5 +180,3 @@ exports.deleteBlog = async (req, res) => {
     }
 
 };
-
-// End of the code
