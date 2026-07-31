@@ -1,5 +1,3 @@
-const API_BASE = "http://localhost:5000";
-
 const params = new URLSearchParams(window.location.search);
 const blogId = params.get("id");
 
@@ -46,7 +44,7 @@ async function loadPost() {
         container.innerHTML = `
 
             ${blog.image
-                ? `<img src="${API_BASE}/uploads/${blog.image}" alt="${blog.title}">`
+                ? `<img src="${blog.image}" alt="${blog.title}">`
                 : ""
             }
 
@@ -56,11 +54,11 @@ async function loadPost() {
 
             <div class="blog-post-body">
                 ${blog.content
-                    .split("\n")
-                    .filter(p => p.trim())
-                    .map(p => `<p>${p}</p>`)
-                    .join("")
-                }
+                .split("\n")
+                .filter(p => p.trim())
+                .map(p => `<p>${p}</p>`)
+                .join("")
+            }
             </div>
 
         `;
