@@ -1,4 +1,3 @@
-const API_BASE = "http://localhost:5000";
 
 const token = localStorage.getItem("token");
 
