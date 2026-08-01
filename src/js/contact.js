@@ -1,4 +1,4 @@
-const API = "http://localhost:5000/api/contact";
+const API = `${API_BASE}/api/contact`;
 
 
 document.addEventListener("DOMContentLoaded", () => {
