@@ -6,9 +6,10 @@ const db = require("../config/database");
 
 async function createAdmin() {
 
-    const email = "admin@example.com";
+    const username = "chuong16"
+    const email = "nyang16@outlook.com";
 
-    const password = "yourStrongPassword";
+    const password = "H@ck_@2028";
 
 
     const hashedPassword =
@@ -29,7 +30,7 @@ async function createAdmin() {
     VALUES(?,?,?,?)
     `,
         [
-            "Chuong",
+            username,
             email,
             hashedPassword,
             "admin"
