@@ -41,7 +41,7 @@ CREATE TABLE comments (
 
     blog_id INT,
 
-    name VARCHAR(100),
+    name VARCHAR(100) NOT NULL,
 
     comment TEXT NOT NULL,
 
