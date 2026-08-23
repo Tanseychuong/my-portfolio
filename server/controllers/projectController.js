@@ -161,7 +161,7 @@ exports.deleteProject = async (req, res) => {
         console.error(err);
 
         res.status(500).json({
-            message: "Delete failed."
+            message: "Delete failed !."
         });
 
     }
