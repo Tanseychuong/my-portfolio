@@ -43,7 +43,7 @@ CREATE TABLE comments (
 
     name VARCHAR(100),
 
-    comment TEXT,
+    comment TEXT NOT NULL,
 
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
