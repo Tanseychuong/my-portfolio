@@ -51,7 +51,9 @@ async function loadBlogs() {
 
         }
 
-        blogs.slice(0, 3).forEach(blog => {
+        const limit = container.dataset.limit === "all" ? blogs.length : 3;
+
+        blogs.slice(0, limit).forEach((blog, index) => {
 
             container.innerHTML += `
 
@@ -59,7 +61,7 @@ async function loadBlogs() {
 
                 ${blog.image
                     ? `<img src="${blog.image}" alt="${blog.title}">`
-                    : ""
+                    : `<div class="thumb one" aria-hidden="true">${String(index + 1).padStart(2, "0")}</div>`
                 }
 
                 <div class="blog-card-content">
@@ -85,6 +87,12 @@ async function loadBlogs() {
             `;
 
         });
+
+        const count = document.getElementById("blog-count");
+
+        if (count) {
+            count.textContent = `${blogs.length} ${blogs.length === 1 ? "article" : "articles"}`;
+        }
 
     } catch (error) {
 
