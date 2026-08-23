@@ -61,7 +61,7 @@ CREATE TABLE messages (
 
     name VARCHAR(100) NOT NULL,
 
-    email VARCHAR(150),
+    email VARCHAR(150) NOT NULL,
 
     message TEXT,
 
