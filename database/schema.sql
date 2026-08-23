@@ -89,8 +89,8 @@ CREATE TABLE visitors (
 
 CREATE TABLE projects (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(150),
-    description TEXT,
+    title VARCHAR(150) NOT NULL,
+    description TEXT NOT NULL,
     image VARCHAR(255),
     github_url VARCHAR(255),
     live_url VARCHAR(255),
